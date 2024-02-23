@@ -22,7 +22,7 @@ pipeline {
             steps{
                 script {
                     echo 'Die zweite datei wird erstellt' // Ausgabe für die Aufgabe
-                    writeFile file: 'dokument2.txt', text: 'Hier ist die zweite Datei' //Erstellt eine Datei mit dem Namen "dokument1.txt und füght den Text hinzu"
+                    writeFile file: 'dokument2.txt', text: 'Hier ist die zweite Datei' //Erstellt eine Datei mit dem Namen "dokument2.txt und füght den Text hinzu"
                     echo 'Der Inhalt der zweiten Datei' // Ausgabe für die Afugabe
                     sh 'cat dokument2.txt' // Ausgabe des Inhaltes von der Datei
                 }
