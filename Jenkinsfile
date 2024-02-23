@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers {
+        cron('H/6 * * * *')
+    }
     stages {
         stage('Erstellung der ersten Datei') {
             steps{
@@ -18,6 +21,14 @@ pipeline {
                     writeFile file: 'dokument2.txt', text: 'Hier ist die zweite Datei'
                     echo 'Der Inhalt der zweiten Datei'
                     sh 'cat dokument2.txt'
+                }
+            }
+        }
+        stage('Hinzufügen von zusätzlichen Texten'){
+            steps {
+                script {
+                    sh 'echo -n "Zusätzlicher Inhalt zu der ersten Dokument ${BUILD_NUMBER}" >> dokument1.txt'
+                    sh 'echo -n "Zusätzlicher Inhalt zu der zweiten Dokument ${BUILD_NUMBER}" >> dokument2.txt'
                 }
             }
         }
