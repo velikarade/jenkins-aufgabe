@@ -48,9 +48,11 @@ pipeline {
             // speichert nur die letzten Versionen. 
         }
         success {
+            // gibt den Text aus, wenn kein Fehler auftritt.
             echo 'Die Aufgaben sind erfolgreich erledigt'
         }
         failure {
+            // gibt den Text aus, wenn Fehler auftreten. 
             echo 'PANIC! PANIC! PANIC!'
         }
     }
