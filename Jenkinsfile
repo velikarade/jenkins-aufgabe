@@ -34,4 +34,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            archiveArtifacts 'dokument1.txt, dokument2.txt'
+        }
+    }
 }
