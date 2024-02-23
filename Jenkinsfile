@@ -29,6 +29,7 @@ pipeline {
                 script {
                     sh 'echo -n "Zusätzlicher Inhalt zu der ersten Dokument ${BUILD_NUMBER}" >> dokument1.txt'
                     sh 'echo -n "Zusätzlicher Inhalt zu der zweiten Dokument ${BUILD_NUMBER}" >> dokument2.txt'
+                    echo 'Die Texte weurden hinzugefügt'
                 }
             }
         }
