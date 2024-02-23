@@ -47,5 +47,11 @@ pipeline {
             archiveArtifacts 'dokument1.txt, dokument2.txt' // Speicher die Dateien mit definierten Namen. 
             // speichert nur die letzten Versionen. 
         }
+        success {
+            echo 'Die Aufgaben sind erfolgreich erledigt'
+        }
+        failure {
+            echo 'PANIC! PANIC! PANIC!'
+        }
     }
 }
